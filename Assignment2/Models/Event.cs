@@ -11,7 +11,7 @@ namespace olympicEvents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Event()
         {
-            EventsDetails = new HashSet<EventsDetail>();
+            EventsDetail = new HashSet<EventsDetail>();
         }
 
         public int eventID { get; set; }
@@ -27,6 +27,6 @@ namespace olympicEvents.Models
         public int Participation_Percent { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EventsDetail> EventsDetails { get; set; }
+        public virtual ICollection<EventsDetail> EventsDetail { get; set; }
     }
 }

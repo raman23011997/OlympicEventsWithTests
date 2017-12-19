@@ -26,7 +26,7 @@ namespace olympicEvents.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Event>()
-                .HasMany(e => e.EventsDetails)
+                .HasMany(e => e.EventsDetail)
                 .WithRequired(e => e.Event)
                 .WillCascadeOnDelete(false);
 

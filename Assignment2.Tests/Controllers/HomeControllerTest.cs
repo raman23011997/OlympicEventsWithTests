@@ -6,11 +6,13 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Assignment2;
 using Assignment2.Controllers;
+using Moq;
 
 namespace Assignment2.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
+
     {
         [TestMethod]
         public void Index()

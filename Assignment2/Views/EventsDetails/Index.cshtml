@@ -24,10 +24,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Age_InYears)
         </th>
-@if (User.IsInRole("user"))
-{
-        <th  style="text-align:center;">Action</th>
-}
+
+      <th  style="text-align:center;">Action</th>
+
     </tr>
 
 @foreach (var item in Model) {
@@ -44,15 +43,20 @@
         <td style="text-align:center;">
             @Html.DisplayFor(modelItem => item.Age_InYears)
         </td>
-        @if (User.IsInRole("user"))
-        {
+     
+
         <td style="width:200px;
               text-align:center;">
-            @Html.ActionLink("Edit", "Edit", new { id = item.event_detailID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.event_detailID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.event_detailID })
+            @if (User.IsInRole("user")) {
+            @Html.ActionLink("Edit", "Edit", new { id = item.event_detailID })
+                          }
+           @Html.ActionLink("Details", "Details", new { id = item.event_detailID })
+            @if (User.IsInRole("user"))
+            {
+             @Html.ActionLink("Delete", "Delete", new { id = item.event_detailID })
+            }
         </td>
-        }
+      
     </tr>
 }
 

@@ -21,10 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Participation_Percent)
         </th>
-@if ( User.IsInRole("user"))
-{
+
         <th  style="text-align: center;">Action</th>
-}
+
     </tr>
 
 @foreach (var item in Model) {
@@ -38,14 +37,20 @@
         <td style="text-align:center;">
             @Html.DisplayFor(modelItem => item.Participation_Percent)
         </td>
-        @if ( User.IsInRole("user") ) { 
+        
         <td style="width:200px;
               text-align:center;">
-            @Html.ActionLink("Edit", "Edit", new { id=item.eventID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.eventID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.eventID })
+@if (User.IsInRole("user"))
+{
+    @Html.ActionLink("Edit", "Edit", new { id = item.eventID })
+                           }
+         @Html.ActionLink("Details", "Details", new { id = item.eventID })
+@if (User.IsInRole("user"))
+{
+    @Html.ActionLink("Delete", "Delete", new { id = item.eventID })
+}
         </td>
-        }
+        
     </tr>
 }
 
