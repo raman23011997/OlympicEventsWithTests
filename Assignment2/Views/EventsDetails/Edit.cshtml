@@ -19,8 +19,11 @@
         @Html.HiddenFor(model => model.event_detailID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.eventID, "eventID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+           <h6 style="font-weight:bolder; position:absolute;
+left:160px;
+              ">Player</h6>
+            <div class="col-md-10" style="position:relative; left:167px;"
+				 >
                 @Html.DropDownList("eventID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.eventID, "", new { @class = "text-danger" })
             </div>
